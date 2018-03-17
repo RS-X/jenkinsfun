@@ -1,10 +1,25 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
+    stage('Hello') {
+      parallel {
+        stage('Hello') {
+          steps {
+            sleep 2
+            echo 'Hello World'
+          }
+        }
+        stage('World') {
+          steps {
+            echo 'World'
+            sleep 5
+          }
+        }
+      }
+    }
+    stage('Random') {
       steps {
-        sleep 2
-        echo 'Hello World'
+        sh 'echo $RANDOM'
       }
     }
   }
