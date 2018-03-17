@@ -15,6 +15,16 @@ pipeline {
             sleep 5
           }
         }
+        stage('') {
+          steps {
+            sh '''
+
+
+
+echo $PWD
+echo ls -l'''
+          }
+        }
       }
     }
     stage('Random') {
