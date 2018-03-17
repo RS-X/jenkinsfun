@@ -15,14 +15,14 @@ pipeline {
             sleep 5
           }
         }
-        stage('') {
+        stage('Current dir') {
           steps {
             sh '''
 
 
 
 echo $PWD
-echo ls -l'''
+ls -l'''
           }
         }
       }
