@@ -34,14 +34,19 @@ ls -l'''
     }
     stage('Checkout') {
       parallel {
-        stage('Checkout') {
+        stage('Otserv') {
           steps {
-            git(url: 'https://github.com/RS-X/jenkinsfun.git', branch: 'master')
+            git(url: 'https://github.com/bad-trip/OTServFlagCalculator.git', branch: 'master')
           }
         }
         stage('ntscout') {
           steps {
             git(url: 'https://github.com/bad-trip/NTScout.git', branch: 'master')
+          }
+        }
+        stage('zfun') {
+          steps {
+            git(url: 'https://github.com/bad-trip/zfun.git', branch: 'master')
           }
         }
       }
