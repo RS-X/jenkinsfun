@@ -36,17 +36,20 @@ ls -l'''
       parallel {
         stage('Otserv') {
           steps {
+            pwd()
             git(url: 'https://github.com/bad-trip/OTServFlagCalculator.git', branch: 'master')
           }
         }
         stage('ntscout') {
           steps {
             git(url: 'https://github.com/bad-trip/NTScout.git', branch: 'master')
+            pwd()
           }
         }
         stage('zfun') {
           steps {
             git(url: 'https://github.com/bad-trip/zfun.git', branch: 'master')
+            pwd()
           }
         }
       }
