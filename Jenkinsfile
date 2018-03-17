@@ -33,8 +33,17 @@ ls -l'''
       }
     }
     stage('Checkout') {
-      steps {
-        git(url: 'https://github.com/RS-X/jenkinsfun.git', branch: 'master')
+      parallel {
+        stage('Checkout') {
+          steps {
+            git(url: 'https://github.com/RS-X/jenkinsfun.git', branch: 'master')
+          }
+        }
+        stage('ntscout') {
+          steps {
+            git(url: 'https://github.com/bad-trip/NTScout.git', branch: 'master')
+          }
+        }
       }
     }
     stage('Find') {
